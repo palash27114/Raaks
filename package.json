@@ -2,20 +2,28 @@
   "name": "raaks",
   "version": "1.0.0",
   "description": "Production level project of me",
-  "keywords": ["javaScript","Express","DataModelling",
+  "keywords": [
+    "javaScript",
+    "Express",
+    "DataModelling",
     "MERN"
   ],
-  "github":"https://github.com/palash27114/Raaks.git",
+  "github": "https://github.com/palash27114/Raaks.git",
   "license": "ISC",
   "author": "Palash Joshi",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon src/index.js",
+    "plz": "node index.js"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "mongoose": "^9.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
