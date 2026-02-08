@@ -20,6 +20,7 @@ const uploadCloudinar=async (localfilePath)=>{
             resource_type:"auto"
         })
         console.log("File is uploaded",response.url);
+        fs.unlinkSync(localfilePath)
         return response;
     }
     catch(error){

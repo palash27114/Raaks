@@ -14,6 +14,7 @@ const registerUser= asyncHandler(async (req,res)=>{
     //remove password and refresh token field from response
     //check for user creation
     //return res
+
 const {FullName,email,username,password}=req.body
 
     if(
@@ -30,10 +31,10 @@ const {FullName,email,username,password}=req.body
             throw new ApiError(409,"User already exists")
         }
 
-        const avatarlocalPath=req.files?.avatar[0]?.path
-        const coverImageLoaclPath=req.files?.CoverImage[0]?.path;
+        const avatarlocalPath=req.files?.avatar?.[0]?.path
+        const coverImageLoaclPath=req.files?.CoverImage?.[0]?.path;
         if(!avatarlocalPath){
-            throw new ApiError(400,"Needed Avatar")
+            throw new ApiError(400,"hello Avatar")
         }
 
         const avatar =await uploadCloudinar(avatarlocalPath)
@@ -50,7 +51,6 @@ const {FullName,email,username,password}=req.body
             email,
             password,
             username:username.toLowerCase()
-
         })
 
         const createduser=await User.findById(user._id).select(
